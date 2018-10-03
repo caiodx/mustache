@@ -1,0 +1,164 @@
+{% 
+    set titulo = 'Configurações de e-mail' 
+%}
+
+{% extends "base/base.template.html" %}
+
+{% block header %}
+{{ parent() }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <!--breadcrumbs start-->
+    <div id="breadcrumbs-wrapper">
+   
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">{{titulo}}</h5>
+                    <ol class="breadcrumbs">
+                        <li><a>Parâmetros</a></li>
+                        <li class="active">{{titulo}}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--start container-->
+    <div class="container">
+        <div class="section">
+            <!--
+                <ul class="collapsible collapsible-accordion" data-collapsible="expandable">
+                    <li>
+                        <div class="collapsible-header active">Configurações de e-mail</div>
+                        <div class="collapsible-body">
+                        <p>
+                            
+                        </p>
+                        </div>
+                    </li>
+                   
+                </ul>
+            -->
+            <h4 class="header2">Dados do servidor que enviará todos os e-mails do sistema.</h4>
+  
+                <div id="card-alert" class="card deep-purple lighten-5 hide">
+                    <div class="card-content deep-purple-text" id="texto">
+                      <p></p>
+                    </div>
+                </div>
+
+                <div class="col s12 m12 l6">
+
+                    <div class="card-panel">
+                        
+                        <div class="row">
+
+                              
+                      
+                            <form class="col s12" id="frmParamEmail" method="post">
+                                 
+                                <div class="row">
+                                    <div class="input-field col s8 l10">
+                                        <input placeholder="smtp.dominio.com.br" id="txtSMTP" name="txtSMTP" type="text" autofocus>
+                                        <label for="txtSMTP" class="active">Servidor SMTP</label>
+                                    </div>
+                                    
+                                    <div class="input-field col s4 l2">
+                                        <input placeholder="587" id="txtPORTA" name="txtPORTA" type="text">
+                                        <label for="txtPORTA" class="active">Porta</label>
+                                    </div>
+                                </div>
+
+                               
+
+                                <div class="row">
+                                    <div class="input-field col s12 l6">
+                                        <input placeholder="nome@dominio.com.br" id="txtEMAIL" name="txtEMAIL" type="email">
+                                        <label for="txtEMAIL" class="active">E-mail de autenticação</label>
+                                    </div>
+
+                                    <div class="input-field col s8 l4">
+                                        <input placeholder="******" id="txtSENHA" name="txtSENHA" type="password">
+                                        <label for="txtSENHA" class="active">Senha</label>
+                                    </div>
+
+                               
+                                    <div id="input-select" class="col s4 l2">
+                                        <div class="input-field col s12">
+                                        <label for="cboTIPOSEGURANCA">Tipo de segurança</label>
+                                        <select id="cboTIPOSEGURANCA" name="cboTIPOSEGURANCA">
+                                            <option value="Nenhuma">Nenhuma</option>
+                                            <option value="TLS">TLS</option>
+                                            <option value="SSL">SSL</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    </div>
+                                
+
+                                <div class="row">
+                                    <div class="input-field col s12 l6">
+                                        <input placeholder="Sua Empresa" id="txtNOMEEXIBICAO" name="txtNOMEEXIBICAO" type="text">
+                                        <label for="txtNOMEEXIBICAO" class="active">Nome de exibição</label>
+                                    </div>
+                                    
+                                    <div class="input-field col s12 l6">
+                                        <input placeholder="emailde@dominio.com.br" id="txtEMAILEXIBICAO" name="txtEMAILEXIBICAO" type="text">
+                                        <label for="txtEMAILEXIBICAO" class="active">E-mail de exibição</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="col s12">
+                                    <p>
+                                        <input type="checkbox" class="checkbox" id="chkREQUER_AUTENTICACAO" name="chkREQUER_AUTENTICACAO"> 
+                                        <label for="chkREQUER_AUTENTICACAO">Servidor requer autenticação</label>
+                                        </p>
+                                </div>
+                                
+                                <div class="col s12">
+                                    <p>
+                                        <input type="checkbox" class="checkbox" id="chkENVIAHTML" name="chkENVIAHTML"> 
+                                        <label for="chkENVIAHTML">Habilitar envio de HTML</label>
+                                        </p>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        
+                                        <button class="btn waves-effect waves-light right" 
+                                                    type="submit" 
+                                                    id="btnSalvar"
+                                                    name="action">
+                                                    
+                                                <i class="mdi-hardware-keyboard-arrow-right right"></i>
+                                                Salvar
+                                                    
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+    <!--end container-->
+
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+
+<script type="text/javascript" src="{{ base_url() }}/files/js/telas/parametros/email.js"></script>
+
+{% endblock %}

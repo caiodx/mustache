@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <title>Cadastro de Membros</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{{ base_url() }}/files/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"> 
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="{{ base_url() }}/files/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link href="{{ base_url() }}/files/js/plugins/smartwizard/css/smart_wizard.css" rel="stylesheet" type="text/css" />
+    <link href="{{ base_url() }}/files/js/plugins/smartwizard/css/smart_wizard_theme_circles.css" rel="stylesheet" type="text/css" />
+    <link href="{{ base_url() }}/files/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <style>
+        fieldset>legend{
+            padding-right: 5px;
+            padding-left: 5px;
+            width: auto!important;
+        }
+
+        fieldset{
+            border-radius: 10px;
+        }
+
+        .btn-toolbar{
+            padding-bottom:10px;
+        }
+
+        .imgLogo{
+            margin:0 auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+
+   
+    <div class="container"> 
+            <img class="imgLogo" src="{{ base_url() }}/files/images/materialize-logo.png">
+
+        <Br>
+        <input type="text" value="{{token}}" id="token" hidden>
+
+        <div id="Erro">
+            Chave inválida.
+        </div>
+           
+        
+        <div id="Formulario">
+            <form id="frmCadastro" role="form" data-toggle="validator" method="post" action="javascript:void(0);" accept-charset="utf-8">
+                <div id="smartwizard">
+                    <ul>
+                        <li><a href="#passo-0">Passo 1<br /><small>Dados Pessoais</small></a></li>
+                        <li><a href="#passo-1">Passo 2<br /><small>Pagamento</small></a></li>
+                        <li><a href="#passo-2">Passo 4<br /><small>Resumo</small></a></li>
+                    </ul>
+
+                    <br>
+
+                    <div>
+                    
+                        <div id="passo-0" class="">
+                            {{ include('autoCadastro/dadosCadastrais.html') }}
+                        </div>
+
+                        <div id="passo-1" class="">
+                            {{ include('autoCadastro/dadosPagamento.html') }}
+                        </div>
+                        
+                        <div id="passo-2" class="">
+                            {{ include('autoCadastro/finalizacao.html') }}
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        
+    <Br>
+
+    </div>
+
+    <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/files/js/materialize.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/files/js/plugins.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/smartwizard/js/jquery.smartWizard.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/files/js/telas/membrosCadastro/membros.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/formatter/jquery.formatter.min.js"></script>   
+    <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/files/js/globais.js"></script>
+
+    <script type="text/javascript" src="https://js.iugu.com/v2"></script>
+
+
+
+
+
+</body>
+</html>

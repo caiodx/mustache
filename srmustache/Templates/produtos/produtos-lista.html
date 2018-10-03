@@ -1,0 +1,105 @@
+{% set titulo = 'Listar Produtos' %}
+
+{% extends "base/base.template.html" %}
+
+{% block header %}
+{{ parent() }}
+
+<!-- <link href="{{ base_url() }}/files/js/plugins/jsgrid/css/jsgrid.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+<link href="{{ base_url() }}/files/js/plugins/jsgrid/css/jsgrid-theme.min.css" type="text/css" rel="stylesheet" media="screen,projection"> -->
+<link href="{{ base_url() }}/files/js/plugins/data-tables/dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <!--breadcrumbs start-->
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2"
+                   placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Produtos</h5>
+                    <ol class="breadcrumbs">
+                        <li><a>Cadastros</a></li>
+                        <li class="active">Produtos</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--start container-->
+    <!--start container-->
+    <div class="container">
+        <div class="section">
+            
+            <!--
+                <p class="caption">
+                <a class="btn waves-effect waves-light" href="{{ path_for('convites.novo') }}">Enviar Convites</a>
+            </p>
+            -->
+
+            <table id="gridProdutos" class="display responsive" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Base</th>
+                        <th>Nome</th>
+                        <th>Classe</th>                      
+                    </tr>
+                </thead>
+                <tbody>                    
+                </tbody>               
+            </table>
+     
+
+            <!-- <div id="gridProdutos" class="responsive-table "></div> -->
+
+            <!--
+                <table id="grid" class="responsive-table display " >
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Mensagem</th>
+                        <th>Token</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        -->
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastrar novo" href="{{path_for('produtos.novo')}}">
+                  <i class="mdi-content-add"></i>
+                </a>
+              </div>
+        </div>
+
+    </div>
+    <!--end container-->
+    
+
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+
+<!-- <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jsgrid/js/db.js"></script>
+<script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jsgrid/js/jsgrid.min.js"></script>
+<script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jsgrid/js/jsgrid-script.js"></script> -->
+<script type="text/javascript" src="{{ base_url() }}/files/js/plugins/data-tables/data-tables-script.js"></script>
+<script type="text/javascript" src="{{ base_url() }}/files/js/telas/produtos/produto.js"></script>
+{% endblock %}

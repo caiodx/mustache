@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="p-brt">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Login > Sr Mustache Members Club</title>
+
+  <!-- Favicons-->
+  <link rel="icon" href="{{ base_url() }}/files/images/favicon/favicon-32x32.png" sizes="32x32">
+ 
+  <!-- iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+
+  
+  <style type="text/css">
+    .input-field div.error{
+      position: relative;
+      top: -1rem;
+      left: 0rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      color:#e6b122;
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      -o-transform: translateY(0%);
+      transform: translateY(0%);
+      text-align: right;
+    }
+
+    </style>
+    
+  <link href="{{ base_url() }}/files/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{{ base_url() }}/files/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{{ base_url() }}/files/css/layouts/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+  
+</head>
+
+<body style="background-color:#e6b122;">
+
+
+
+
+  <div id="login-page" class="row">
+    <div class="col s12 z-depth-4 card-panel">
+      <form action="javascript:login();" class="login-form" id="frmLogin">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <!--<img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+            -->
+            <p class="center login-form-text">Sr Mustache Members Club</p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="txtLogin" name="txtLogin" type="text" autofocus>
+            <label for="txtLogin" class="center-align">Usuário</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="txtPass" name="txtPass" type="password">
+            <label for="txtPass">Senha</label>
+          </div>
+        </div>
+        <div class="row">          
+          <div class="input-field col s12 m12 l12  login-text">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Lembrar senha</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <button id="btnEntrar" class="btn waves-effect waves-light col s12">Entrar</button>
+          </div>
+
+
+        </div>
+        <div class="row">
+          <div class="input-field col s6 m6 l6">
+            <p class="margin medium-small"></p>
+          </div>
+          <div class="input-field col s6 m6 l6">
+              <p class="margin right-align medium-small"><a href="page-forgot-password.html">Esqueceu a senha?</a></p>
+          </div>          
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="{{ base_url() }}/files/js/materialize.js"></script>
+  <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="{{ base_url() }}/files/js/plugins/jquery-validation/additional-methods.min.js"></script> 
+  <script type="text/javascript" src="{{ base_url() }}/files/js/globais.js"></script>	
+	<script type="text/javascript" src="{{ base_url() }}/files/js/telas/login/login.js"></script>
+
+</body>
+
+</html>

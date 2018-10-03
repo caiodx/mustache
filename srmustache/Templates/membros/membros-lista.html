@@ -1,0 +1,56 @@
+{% extends "base/base.template.html" %}
+
+{% block header %}
+{{ parent() }}
+
+<link href="{{ URL }}/js/plugins/jsgrid/css/jsgrid.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+<link href="{{ URL }}/js/plugins/jsgrid/css/jsgrid-theme.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+{% endblock %}
+
+{% block content %}
+
+    <!--breadcrumbs start-->
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2"
+                   placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Membros</h5>
+                    <ol class="breadcrumbs">
+                        <li><a href="index.html">Cadastros</a></li>
+                        <li class="active">Membros</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--start container-->
+    <div class="container">
+        <div class="section">
+
+            <p class="caption"><a class="btn waves-effect waves-light grey" href="{{ path_for('membros.novo') }}">Novo</a></p>
+            <div class="divider"></div>
+            <br>
+            <div id="jsGrid"></div>
+        </div>
+
+    </div>
+    <!--end container-->
+
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+
+<script type="text/javascript" src="{{ URL }}/js/plugins/jsgrid/js/db.js"></script>
+<script type="text/javascript" src="{{ URL }}/js/plugins/jsgrid/js/jsgrid.min.js"></script>
+<script type="text/javascript" src="{{ URL }}/js/plugins/jsgrid/js/jsgrid-script.js"></script>
+<script type="text/javascript" src="{{ URL }}/js/telas/produto.js"></script>
+{% endblock %}

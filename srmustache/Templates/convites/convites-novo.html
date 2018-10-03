@@ -1,0 +1,104 @@
+{% set titulo = 'Cadastrar Produtos' %}
+
+{% extends "base/base.template.html" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+
+<div id="breadcrumbs-wrapper">
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <h5 class="breadcrumbs-title">Envio de convites para cadastro de membros</h5>
+                <ol class="breadcrumbs">
+                    <li><a>Cadastros</a></li>
+                    <li><a href="{{ path_for('convites') }}">Convites</a></li>
+                    <li class="active">Novo</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="section">
+        <div class="row"></div>
+
+            <div id="card-alert" class="card deep-purple lighten-5 hide">
+                <div class="card-content deep-purple-text" id="texto">
+                  <p></p>
+                </div>
+            </div>
+
+            <div class="col s12 m12 l6">
+                <div class="card-panel">
+                    <h4 class="header2">Informe os dados de seu amigo!</h4>
+                    <div class="row">
+                    <form class="right-alert col s12 frmNovoConvite" id="frmNovoConvite" method="post">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <!--<i class="mdi-action-account-circle prefix" ></i>-->
+                                <input placeholder="Ex.: João da Silva" 
+                                        id="nome" 
+                                        name="nome"
+                                        type="text"  
+                                        autofocus>
+                                <label for="nome">Nome</label>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <!--<i class="mdi-communication-email prefix"></i>-->
+                                <input placeholder="email@dominio.com.br" 
+                                        id="email" 
+                                        name="email" 
+                                        type="email">
+                                <label for="email">E-mail</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="input-field col s12">
+                               <!-- <i class="mdi-action-question-answer prefix"></i>-->
+                                <textarea id="mensagem" 
+                                            name="mensagem" 
+                                            class="materialize-textarea"
+                                            length="120"></textarea>
+                                <label for="mensagem">Mensagem</label>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn waves-effect waves-light right" 
+                                                type="submit" 
+                                                id="btnEnviar"
+                                                name="action">Enviar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+<script type="text/javascript" src="{{ base_url() }}/files/js/telas/convites/convites_salvar.js"></script>
+
+{% endblock %}

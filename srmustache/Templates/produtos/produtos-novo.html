@@ -1,0 +1,125 @@
+{% set titulo = 'Cadastrar Produtos' %}
+
+{% extends "base/base.template.html" %}
+
+{% block header %}
+{{ parent() }}
+    
+{% endblock %}
+
+{% block content %}
+
+<!--breadcrumbs start-->
+<div id="breadcrumbs-wrapper">
+    <!-- Search for small screen -->
+    <div class="header-search-wrapper grey hide-on-large-only">
+        <i class="mdi-action-search active"></i>
+        <input type="text" name="Search" class="header-search-input z-depth-2"
+               placeholder="Explore Materialize">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <h5 class="breadcrumbs-title">Produtos</h5>
+                <ol class="breadcrumbs">
+                    <li><a>Cadastros</a></li>
+                    <li><a id="produtos_lista" href="../produtos">Produtos</a></li>
+                    <li class="active">Novo</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumbs end-->
+
+<!--start container-->
+<div class="container">
+    <div class="section">
+        <div class="row"></div>
+
+            <div id="card-alert" class="card deep-purple lighten-5 hide">
+                <div class="card-content deep-purple-text" id="texto">
+                  <p></p>
+                </div>
+            </div>
+
+            <div class="col s12 m12 l6">
+                <div class="card-panel">
+                    <!-- <h4 class="header2">Informe os dados de seu amigo!</h4>
+                    <div class="row"> -->
+                    <form action="javascript:Salvar();" class="right-alert col s12 frmNovoProduto" id="frmNovoProduto">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <!--<i class="mdi-action-account-circle prefix" ></i>-->
+                                <input style="text-transform:uppercase" placeholder="Ex.: CAMISA" 
+                                        id="especificacao" 
+                                        name="especificacao"
+                                        type="text" 
+                                        autofocus>
+                                <label for="especificacao">Descrição</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <!--<i class="mdi-action-account-circle prefix" ></i>-->
+                                <select id="classe" name="classe">
+                                    <option value="" disabled selected>Selecione a classe</option>                                  
+                                </select>
+                                <label for="classe">Classe</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <!--<i class="mdi-communication-email prefix"></i>-->
+                                <input  id="base" 
+                                        name="base"
+                                        type="text" 
+                                        autofocus>
+                                <label for="base">Base</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <!-- <i class="mdi-action-question-answer prefix"></i>-->
+                                 <select id="tipo" name="tipo">
+                                     <option value="" disabled selected>Selecione o tipo de mercadoria</option>   
+                                     <option value="1">Mercadoria</option>
+                                     <option value="2">Serviço</option>                                  
+                                 </select>
+                                 <label for="tipo">Tipo</label>
+                             </div>
+                        </div>                        
+                        
+                        <div class="row">
+                            <div class="input-field col s12">
+                                    
+                                    
+                                    <button style="margin-left: 10px" class="btn waves-effect waves-light right red " 
+                                                id="excluir"
+                                                name="excluir" onclick="return Excluir();"><i class="mdi-content-clear"></i>&nbsp;Excluir
+                                    </button> 
+                                  
+                                    <button class="btn waves-effect waves-light right" 
+                                                type="submit" 
+                                                id="btnEnviar"
+                                                name="action"><i class="mdi-content-save"></i>&nbsp;Salvar
+                                    </button>
+                                
+                                                                     
+                            </div>                           
+                            
+                        </div>
+                        
+                    </form>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+<!--end container-->
+
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+<script type="text/javascript" src="{{ base_url() }}/files/js/plugins/sweetalert/dist/sweetalert.js"></script>  
+<script type="text/javascript" src="{{ base_url() }}/files/js/telas/produtos/produto-salvar.js"></script>
+{% endblock %}
